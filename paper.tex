@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{plain}
+\newtheorem{corollarly}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\title{On the Generalized Black-Scholes-Merton Analytical Solution}
+\author{Brent A. Ritterbeck \\ brent@ritterbeck.co}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is the abstract.
+\end{abstract}
+
+\section{Theory}
+
+\begin{theorem} \label{eur_van_call_val}
+The value $V_{c}$ of a European vanilla call option is given by
+\begin{equation*}
+V_{c} = Se^{\left ( b - r \right ) \left (T - t \right )} \Phi \left ( d_{1} \right )
+    - Xe^{-r \left ( T - t \right )} \Phi \left ( d_{2} \right ),
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_put_val}
+The value $V_{p}$ of a European vanilla put option is given by
+\begin{equation*}
+V_{p} = Xe^{-r \left ( T - t \right )} \Phi \left ( -d_{2} \right )
+    - Se^{\left ( b - r \right ) \left (T - t \right )} \Phi \left ( -d_{1} \right ),
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_call_del}
+The delta $\Delta_{c}$ of a European vanilla call option is given by
+\begin{equation*}
+\Delta_{c} = e^{\left ( b - r \right ) \left ( T - t \right )} \Phi \left ( d_{1} \right ),
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_put_del}
+The delta $\Delta_{p}$ of a European vanilla put option is given by
+\begin{equation*}
+\Delta_{p} = -e^{\left ( b - r \right ) \left ( T - t \right )} \Phi \left ( -d_{1} \right ),
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_call_gam}
+The gamma $\Gamma_{c}$ of a European vanilla call option is given by
+\begin{equation*}
+\Gamma_{c} =
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_put_gam}
+The gamma $\Gamma_{p}$ of a European vanilla put option is given by
+\begin{equation*}
+\Gamma_{p} =
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_call_rho}
+The rho $\rho_{c}$ of a European vanilla call option is given by
+\begin{equation*}
+\rho_{c} =
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_put_rho}
+The rho $\rho_{p}$ of a European vanilla put option is given by
+\begin{equation*}
+\rho_{p} = 
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_call_the}
+The theta $\Theta_{c}$ of a European vanilla call option is given by
+\begin{equation*}
+\Theta_{c} = 
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_put_the}
+The theta $\Theta_{p}$ of a European vanilla put option is given by
+\begin{equation*}
+\Theta_{p} =
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_call_veg}
+The vega $\Lambda_{c}$ of a European vanilla call option is given by
+\begin{equation*}
+\Lambda_{c} =
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{theorem} \label{eur_van_put_veg}
+The vega $\Lambda_{p}$ of a European vanilla put option is given by
+\begin{equation*}
+\Lambda_{p} = 
+\end{equation*}
+where $d_{1}$ and $d_{2}$ are as defined in
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\section{Implementation}
+
+As this paper is meant to be pedagogical in nature, we will implement the
+previously discussed material in non-object oriented Python.
+
+\section{Recommended Texts}
+See \cite{HAUG2007} and \cite{CHIN2017} for more information.
+
+\bibliographystyle{alpha}
+\bibliography{paper}
+
+\end{document}
