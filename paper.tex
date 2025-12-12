@@ -25,6 +25,28 @@ This is the abstract.
 
 \section{Theory}
 
+
+\begin{theorem} \label{eur_van_pde}
+The partial differential equation of a European vanilla option is given by
+\begin{equation*}
+\frac{\partial V}{\partial t} + \frac{1}{2} \sigma^{2} S^{2} \frac{\partial^{2} V}{\partial S^{2}}
+    + bS \frac{\partial V}{\partial S} - rV = 0.
+\end{equation*}
+\end{theorem}
+\begin{proof}
+Step 1: Begin with geometric Brownian motion.
+Step 2: Construct a portfolio
+Step 3: Expand with Taylor series
+Step 4: Substitute
+Step 5: Choose Delta appropriately
+Step 6: First form of PDE
+Step 7: Substitute
+Step 8: Rearrange
+\end{proof}
+
+[NOTE TO SELF: The valuation formula come from both books; however, the Greek formulas are
+taken primarily from Haug. This needs to be documented appropriately.]
+
 \begin{theorem} \label{eur_van_call_val}
 The value $V_{c}$ of a European vanilla call option is given by
 \begin{equation*}
@@ -70,7 +92,8 @@ where $d_{1}$ and $d_{2}$ are as defined in
 \begin{theorem} \label{eur_van_call_gam}
 The gamma $\Gamma_{c}$ of a European vanilla call option is given by
 \begin{equation*}
-\Gamma_{c} =
+\Gamma_{c} = \frac{e^{\left ( b - r \right ) \left ( T - t \right )} \phi \left ( d_{1} \right )}
+    {S \sigma \sqrt{T - t}}.
 \end{equation*}
 where $d_{1}$ and $d_{2}$ are as defined in
 \end{theorem}
@@ -80,12 +103,16 @@ where $d_{1}$ and $d_{2}$ are as defined in
 \begin{theorem} \label{eur_van_put_gam}
 The gamma $\Gamma_{p}$ of a European vanilla put option is given by
 \begin{equation*}
-\Gamma_{p} =
+\Gamma_{p} = \frac{e^{\left ( b - r \right ) \left ( T - t \right )} \phi \left ( d_{1} \right )}
+    {S \sigma \sqrt{T - t}}.
 \end{equation*}
 where $d_{1}$ and $d_{2}$ are as defined in
 \end{theorem}
 \begin{proof}
 \end{proof}
+
+[NOTE TO SELF: We need to bifurcate between an options on a future contract and an option on
+everything else].
 
 \begin{theorem} \label{eur_van_call_rho}
 The rho $\rho_{c}$ of a European vanilla call option is given by
@@ -110,7 +137,9 @@ where $d_{1}$ and $d_{2}$ are as defined in
 \begin{theorem} \label{eur_van_call_the}
 The theta $\Theta_{c}$ of a European vanilla call option is given by
 \begin{equation*}
-\Theta_{c} = 
+\Theta_{c} = -\frac{Se^{\left ( b - r \right ) \left ( T - t \right )} \sigma \left ( d_{1} \right )}{2 \sqrt{T - t}}
+    - S \left ( b - r \right ) e^{\left ( b - r \right ) \left ( T - t \right )} \Phi \left ( d_{1} \right )
+    - Xre^{-r \left ( T - t \right )} \Phi \left ( d_{2} \right )
 \end{equation*}
 where $d_{1}$ and $d_{2}$ are as defined in
 \end{theorem}
@@ -120,7 +149,9 @@ where $d_{1}$ and $d_{2}$ are as defined in
 \begin{theorem} \label{eur_van_put_the}
 The theta $\Theta_{p}$ of a European vanilla put option is given by
 \begin{equation*}
-\Theta_{p} =
+\Theta_{p} = -\frac{Se^{\left ( b - r \right ) \left ( T - t \right )} \sigma \left ( d_{1} \right )}{2 \sqrt{T - t}}
+    + S \left ( b - r \right ) e^{\left ( b - r \right ) \left ( T - t \right )} \Phi \left ( -d_{1} \right )
+    + Xre^{-r \left ( T - t \right )} \Phi \left ( -d_{2} \right )
 \end{equation*}
 where $d_{1}$ and $d_{2}$ are as defined in
 \end{theorem}
@@ -153,7 +184,7 @@ As this paper is meant to be pedagogical in nature, we will implement the
 previously discussed material in non-object oriented Python.
 
 \section{Recommended Texts}
-See \cite{HAUG2007} and \cite{CHIN2017} for more information.
+See \cite{BLACK1976}, \cite{GK1983}, \cite{HAUG2007}, and \cite{CHIN2017} for more information.
 
 \bibliographystyle{alpha}
 \bibliography{paper}
